@@ -1,0 +1,146 @@
+2022-04-14 20:05:46 error: [Cake\ORM\Exception\MissingTableClassException] Table class for alias `Roles` could not be found. in C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\cakephp\src\ORM\Locator\TableLocator.php on line 245
+Exception Attributes: array (
+  0 => 'for alias `Roles`',
+)
+Stack Trace:
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\cakephp\src\Datasource\Locator\AbstractLocator.php:68
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\cakephp\src\ORM\Locator\TableLocator.php:205
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\cakephp\src\ORM\Association.php:403
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\cakephp\src\ORM\Association.php:871
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\src\Controller\UsersController.php:125
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\cakephp\src\Controller\Controller.php:539
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\cakephp\src\Controller\ControllerFactory.php:140
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\cakephp\src\Controller\ControllerFactory.php:115
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\cakephp\src\Http\BaseApplication.php:317
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\cakephp\src\Http\Runner.php:77
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\authentication\src\Middleware\AuthenticationMiddleware.php:124
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\cakephp\src\Http\Runner.php:73
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php:161
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\cakephp\src\Http\Runner.php:73
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\cakephp\src\Http\Middleware\CsrfProtectionMiddleware.php:174
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\cakephp\src\Http\Runner.php:73
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\cakephp\src\Http\Middleware\BodyParserMiddleware.php:157
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\cakephp\src\Http\Runner.php:73
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php:161
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\cakephp\src\Http\Runner.php:73
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php:68
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\cakephp\src\Http\Runner.php:73
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php:126
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\cakephp\src\Http\Runner.php:73
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php:60
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\cakephp\src\Http\Runner.php:73
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\cakephp\src\Http\Runner.php:58
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\cakephp\src\Http\Server.php:90
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\webroot\index.php:40
+
+Request URL: /users/edit/1
+
+
+2022-04-14 20:06:48 error: [Cake\Http\Exception\InvalidCsrfTokenException] Missing or invalid CSRF cookie. in C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\cakephp\src\Http\Middleware\CsrfProtectionMiddleware.php on line 394
+Stack Trace:
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\cakephp\src\Http\Middleware\CsrfProtectionMiddleware.php:170
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\cakephp\src\Http\Runner.php:73
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\cakephp\src\Http\Middleware\BodyParserMiddleware.php:162
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\cakephp\src\Http\Runner.php:73
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php:161
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\cakephp\src\Http\Runner.php:73
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php:68
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\cakephp\src\Http\Runner.php:73
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php:126
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\cakephp\src\Http\Runner.php:73
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php:60
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\cakephp\src\Http\Runner.php:73
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\cakephp\src\Http\Runner.php:58
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\cakephp\src\Http\Server.php:90
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\webroot\index.php:40
+
+Request URL: /users/login?redirect=%2Fusers%2Fedit%2F1
+Referer URL: http://localhost:8765/users/login?redirect=%2Fusers%2Fedit%2F1
+
+
+2022-04-14 20:11:41 error: [Cake\ORM\Exception\MissingTableClassException] Table class for alias `Users` could not be found. in C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\cakephp\src\ORM\Locator\TableLocator.php on line 245
+Exception Attributes: array (
+  0 => 'for alias `Users`',
+)
+Stack Trace:
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\cakephp\src\Datasource\Locator\AbstractLocator.php:68
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\cakephp\src\ORM\Locator\TableLocator.php:205
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\cakephp\src\Datasource\ModelAwareTrait.php:128
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\cakephp\src\Controller\Controller.php:315
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\src\Controller\UsersController.php:61
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\cakephp\src\Controller\Controller.php:539
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\cakephp\src\Controller\ControllerFactory.php:140
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\cakephp\src\Controller\ControllerFactory.php:115
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\cakephp\src\Http\BaseApplication.php:317
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\cakephp\src\Http\Runner.php:77
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\authentication\src\Middleware\AuthenticationMiddleware.php:124
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\cakephp\src\Http\Runner.php:73
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php:161
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\cakephp\src\Http\Runner.php:73
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\cakephp\src\Http\Middleware\CsrfProtectionMiddleware.php:174
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\cakephp\src\Http\Runner.php:73
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\cakephp\src\Http\Middleware\BodyParserMiddleware.php:157
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\cakephp\src\Http\Runner.php:73
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php:161
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\cakephp\src\Http\Runner.php:73
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php:68
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\cakephp\src\Http\Runner.php:73
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php:126
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\cakephp\src\Http\Runner.php:73
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php:60
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\cakephp\src\Http\Runner.php:73
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\cakephp\src\Http\Runner.php:58
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\cakephp\src\Http\Server.php:90
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\webroot\index.php:40
+
+Request URL: /users
+Referer URL: http://localhost:8765/users/login
+
+
+2022-04-14 20:12:03 error: [Cake\ORM\Exception\MissingTableClassException] Table class for alias `Roles` could not be found. in C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\cakephp\src\ORM\Locator\TableLocator.php on line 245
+Exception Attributes: array (
+  0 => 'for alias `Roles`',
+)
+Stack Trace:
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\cakephp\src\Datasource\Locator\AbstractLocator.php:68
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\cakephp\src\ORM\Locator\TableLocator.php:205
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\cakephp\src\ORM\Association.php:403
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\cakephp\src\ORM\Query.php:506
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\cakephp\src\ORM\Query.php:462
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\cakephp\src\ORM\Query.php:848
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\cakephp\src\ORM\Table.php:2510
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\cakephp\src\ORM\Table.php:1263
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\cakephp\src\Datasource\Paginator.php:208
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\cakephp\src\Datasource\Paginator.php:177
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\cakephp\src\Controller\Component\PaginatorComponent.php:184
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\cakephp\src\Controller\Controller.php:856
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\src\Controller\UsersController.php:61
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\cakephp\src\Controller\Controller.php:539
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\cakephp\src\Controller\ControllerFactory.php:140
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\cakephp\src\Controller\ControllerFactory.php:115
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\cakephp\src\Http\BaseApplication.php:317
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\cakephp\src\Http\Runner.php:77
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\authentication\src\Middleware\AuthenticationMiddleware.php:124
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\cakephp\src\Http\Runner.php:73
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php:161
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\cakephp\src\Http\Runner.php:73
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\cakephp\src\Http\Middleware\CsrfProtectionMiddleware.php:174
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\cakephp\src\Http\Runner.php:73
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\cakephp\src\Http\Middleware\BodyParserMiddleware.php:157
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\cakephp\src\Http\Runner.php:73
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php:161
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\cakephp\src\Http\Runner.php:73
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php:68
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\cakephp\src\Http\Runner.php:73
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php:126
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\cakephp\src\Http\Runner.php:73
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php:60
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\cakephp\src\Http\Runner.php:73
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\cakephp\src\Http\Runner.php:58
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\vendor\cakephp\cakephp\src\Http\Server.php:90
+- C:\Users\aluno.IFMT\Documents\Raul\projetoGENTRabril\webroot\index.php:40
+
+Request URL: /users
+Referer URL: http://localhost:8765/users/login
+
+

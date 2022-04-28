@@ -43,11 +43,11 @@ return [
              * the following line and set the port accordingly
              */
             //'port' => 'non_standard_port_number',
-
+            'port' => 3300,
             'username' => 'root',
             'password' => 'mysql',
 
-            'database' => 'gentr_bd',
+            'database' => 'gentr',
             /*
              * If not using the default 'public' schema with the PostgreSQL driver
              * set it here.

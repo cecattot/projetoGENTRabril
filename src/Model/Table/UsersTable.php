@@ -42,7 +42,7 @@ class UsersTable extends Table
         parent::initialize($config);
 
         $this->setTable('users');
-        $this->setDisplayField('id');
+        $this->setDisplayField('siape');
         $this->setPrimaryKey('id');
 
         $this->addBehavior('Timestamp');
@@ -73,6 +73,7 @@ class UsersTable extends Table
 
         $validator
             ->scalar('password')
+            ->sameAs('password', 'confirm_password', __('As senhas não conferem.'))
             ->maxLength('password', 250)
             ->requirePresence('password', 'create')
             ->notEmptyString('password');

@@ -32,6 +32,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
         rel="stylesheet"
     />
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -41,6 +42,23 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
         href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.11.0/mdb.min.css"
         rel="stylesheet"
     />
+    <!--Datatables-->
+    <link
+        href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css"
+        rel="stylesheet"
+    />
+    <link
+        href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css"
+        rel="stylesheet"
+    />
+    <script
+        src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script
+        src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script
+        src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <?= $this->Html->css(['style']) ?>
 
@@ -49,19 +67,91 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <?= $this->fetch('script') ?>
 </head>
 <body>
-
-    <main class="main">
+<?php if (!empty($this->request->getSession()->read('Auth'))) : ?>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <?= $this->Flash->render() ?>
-            <?= $this->fetch('content') ?>
+            <ul class="navbar-nav">
+                <!-- Dropdown -->
+                <li class="nav-item dropdown">
+                    <a
+                        class="nav-link dropdown-toggle"
+                        href="#"
+                        id="navbarDropdownMenuLink"
+                        role="button"
+                        data-mdb-toggle="dropdown"
+                        aria-expanded="false"
+                    >
+                        Users
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <li>
+                            <a class="dropdown-item" href="/users">Index</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="/employees/add">Add</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a
+                        class="nav-link dropdown-toggle"
+                        href="#"
+                        id="navbarDropdownMenuLink"
+                        role="button"
+                        data-mdb-toggle="dropdown"
+                        aria-expanded="false"
+                    >
+                        Roles
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <li>
+                            <a class="dropdown-item" href="/roles">Index</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="/roles/add">Add</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="nav-item d-flex justify-content-end">
+                    <a class="nav-link" aria-current="page" href="/users/logout"><i class="fas fa-sign-out-alt"></i></a>
+                </li>
+            </ul>
         </div>
-    </main>
-    <footer>
-    </footer>
-    <!-- MDB -->
-    <script
-        type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.11.0/mdb.min.js"
-    ></script>
+    </nav>
+<?php endif; ?>
+<main class="main">
+
+    <div class="container-fluid">
+        <?php
+        $flash = $this->request->getSession()->read('Flash');
+        $this->request->getSession()->delete("Flash");
+        if (!empty($flash)) {
+            $flash = $flash['flash'][0];
+            $mensagem = $flash['message'];
+            $tipoMsg = explode('/', $flash['element']);
+            echo "
+                    <script type='text/javascript'>
+                        Swal.fire({
+                            icon: '{$tipoMsg[1]}',
+                            html: '{$mensagem}',
+                            showConfirmButton: false,
+                            timer: 5000,
+                        });
+                    </script>
+                    ";
+        }
+        ?>
+        <?= $this->fetch('content') ?>
+    </div>
+</main>
+<footer>
+</footer>
+<!-- MDB -->
+<script
+    type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.11.0/mdb.min.js"
+></script>
+<?= $this->Html->script(['tables']) ?>
 </body>
 </html>

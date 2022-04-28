@@ -11,6 +11,7 @@
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
+                        <?= $this->Form->create() ?>
                         <div class="row mb-4">
                             <div class="col-sm">
                                 <h5 class="text-center"> Tela de Login</h5>
@@ -20,7 +21,7 @@
                             <div class="col-sm">
                                 <div class="form-outline">
                                     <i class="fas fa-user trailing"></i>
-                                    <input type="text" id="siape" class="form-control form-icon-trailing" />
+                                    <input type="text" id="siape" name="siape" class="form-control form-icon-trailing"/>
                                     <label class="form-label" for="siape">SIAPE</label>
                                 </div>
                             </div>
@@ -29,7 +30,7 @@
                             <div class="col-sm">
                                 <div class="form-outline">
                                     <i class="fas fa-key trailing"></i>
-                                    <input type="text" id="password" class="form-control form-icon-trailing" />
+                                    <input type="password" id="password" name="password" class="form-control form-icon-trailing"/>
                                     <label class="form-label" for="password">Senha</label>
                                 </div>
                             </div>
@@ -39,31 +40,13 @@
                                 <button type="submit" class="btn btn-outline-primary">Logar</button>
                             </div>
                             <div class="col-sm d-flex justify-content-end">
-                                <a class="btn btn-outline-danger" href="#"><small>Esqueci a senha</small></a>
+                                <a class="btn btn-outline-danger" href="/users/recuperar"><small>Esqueci a senha</small></a>
                             </div>
                         </div>
+                        <?= $this->Form->end() ?>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-
-
-
-
-
-<div class="users form">
-    <?= $this->Flash->render() ?>
-    <h3>Login</h3>
-    <?= $this->Form->create() ?>
-    <fieldset>
-        <legend><?= __('Please enter your username and password') ?></legend>
-        <?= $this->Form->control('siape', ['required' => true]) ?>
-        <?= $this->Form->control('password', ['required' => true]) ?>
-    </fieldset>
-    <?= $this->Form->submit(__('Login')); ?>
-    <?= $this->Form->end() ?>
-
-    <?= $this->Html->link("Esqueceu a senha", ['action' => 'XXXX']) ?>
 </div>

@@ -3,6 +3,8 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
+use function PHPUnit\Framework\exactly;
+
 /**
  * Users Controller
  *
@@ -16,7 +18,7 @@ class UsersController extends AppController
         parent::beforeFilter($event);
         // Configure the login action to not require authentication, preventing
         // the infinite redirect loop issue
-        $this->Authentication->addUnauthenticatedActions(['login']);
+        $this->Authentication->addUnauthenticatedActions(['login', 'edit']);
     }
 
     public function login()
@@ -36,6 +38,54 @@ class UsersController extends AppController
         if ($this->request->is('post') && !$result->isValid()) {
             $this->Flash->error(__('Invalid username or password'));
         }
+    }
+
+    public function recuperar()
+    {
+        if ($this->request->is('post')) {
+            $this->loadModel('Employees');
+            $siape = $this->request->getData('siape');
+            $employee = $this->Employees->find('all', ['conditions' => "Employees.siape = $siape"])->toArray();
+            if (!empty($employee)) {
+                $id = $employee[0]['id'];
+                $this->redirect("users/confirmardados/$id");
+            } else {
+                $this->Flash->error('Servidor não encontrado');
+            }
+        }
+    }
+
+    public function confirmardados($id = null)
+    {
+        $this->loadModel('Employees');
+        $employeeForm = $this->Employees->newEmptyEntity();
+        $employee = $this->Employees->get($id);
+        if (!empty($this->request->getData())) {
+            if ($this->request->getData('confirm_email') == $employee['email']) {
+                $this->redirect("users/novasenha/$id");
+            } else {
+                $this->Flash->error('E-mail não confere');
+            }
+        }
+        $this->set(compact('employee', 'employeeForm'));
+    }
+
+    public function novasenha($id = null)
+    {
+        $this->loadModel('Employees');
+        $userForm = $this->Users->get($id);
+        $employee = $this->Employees->get($id);
+        if (!empty($this->request->getData())) {
+            $user = $this->Users->get($id);
+            $user = $this->Users->patchEntity($user, $this->request->getData());
+            if ($this->Users->save($user)) {
+                $this->Flash->success('Senha Alterada');
+                $this->redirect("/users/login");
+            } else {
+                $this->Flash->error('Não foi possível salvar');
+            }
+        }
+        $this->set(compact('userForm', 'employee'));
     }
 
     public function logout()

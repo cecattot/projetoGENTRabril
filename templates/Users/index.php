@@ -4,49 +4,57 @@
  * @var \App\Model\Entity\User[]|\Cake\Collection\CollectionInterface $users
  */
 ?>
+<br>
 <div class="users index content">
-    <?= $this->Html->link(__('New User'), ['action' => 'add'], ['class' => 'button float-right']) ?>
-    <h3><?= __('Users') ?></h3>
-    <div class="table-responsive">
-        <table>
-            <thead>
-                <tr>
-                    <th><?= $this->Paginator->sort('id') ?></th>
-                    <th><?= $this->Paginator->sort('siape') ?></th>
-                    <th><?= $this->Paginator->sort('ativo') ?></th>
-                    <th><?= $this->Paginator->sort('created') ?></th>
-                    <th><?= $this->Paginator->sort('modified') ?></th>
-                    <th><?= $this->Paginator->sort('role_id') ?></th>
-                    <th class="actions"><?= __('Actions') ?></th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php foreach ($users as $user): ?>
-                <tr>
-                    <td><?= $this->Number->format($user->id) ?></td>
-                    <td><?= h($user->siape) ?></td>
-                    <td><?= h($user->ativo) ?></td>
-                    <td><?= h($user->created) ?></td>
-                    <td><?= h($user->modified) ?></td>
-                    <td><?= $user->has('role') ? $this->Html->link($user->role->id, ['controller' => 'Roles', 'action' => 'view', $user->role->id]) : '' ?></td>
-                    <td class="actions">
-                        <?= $this->Html->link(__('View'), ['action' => 'view', $user->id]) ?>
-                        <?= $this->Html->link(__('Edit'), ['action' => 'edit', $user->id]) ?>
-                        <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $user->id], ['confirm' => __('Are you sure you want to delete # {0}?', $user->id)]) ?>
-                    </td>
-                </tr>
-                <?php endforeach; ?>
-            </tbody>
-        </table>
-    </div>
-    <div class="paginator">
-        <ul class="pagination">
-            <?= $this->Paginator->first('<< ' . __('first')) ?>
-            <?= $this->Paginator->prev('< ' . __('previous')) ?>
-            <?= $this->Paginator->numbers() ?>
-            <?= $this->Paginator->next(__('next') . ' >') ?>
-            <?= $this->Paginator->last(__('last') . ' >>') ?>
-        </ul>
-        <p><?= $this->Paginator->counter(__('Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total')) ?></p>
+    <div class="card border border-success shadow-0 mb-3">
+        <div class="card-header bg-transparent border-success">
+            <div class="row">
+                <div class="col-10">
+                    <h3 class="text-center"><?= __('Users') ?></h3>
+                </div>
+                <div class="col">
+                    <?= $this->Html->link(__('New User'), ['controller' => 'employees', 'action' => 'add'], ['class' => 'btn btn-success']) ?>
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col">
+                    <div class="table-responsive">
+                        <table class="table table-sm table-hover" id="tableIndex">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>SIAPE</th>
+                                <th>Ativo</th>
+                                <th>Created</th>
+                                <th>Modified</th>
+                                <th>Role</th>
+                                <th>Actions</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <?php foreach ($users as $user): ?>
+                                <tr>
+                                    <td><?= $this->Number->format($user->id) ?></td>
+                                    <td><?= h($user->siape) ?></td>
+                                    <td><?= h($user->ativo) ?></td>
+                                    <td><?= h($user->created) ?></td>
+                                    <td><?= h($user->modified) ?></td>
+                                    <td><?= $user->has('role') ? $this->Html->link($user->role->nome, ['controller' => 'Roles', 'action' => 'view', $user->role->id]) : '' ?></td>
+                                    <td class="actions">
+                                        <?= $this->Html->link(__('View'), ['action' => 'view', $user->id], ['class' => 'btn btn-secondary btn-sm']) ?>
+<!--                                        //= $this->Html->link(__('Edit'), ['action' => 'edit', $user->id], ['class' => 'btn btn-danger btn-sm']) ?> --!-->
+                                        <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $user->id], ['class' => 'btn btn-warning btn-sm'], ['confirm' => __('Are you sure you want to delete # {0}?', $user->id)]) ?>
+                                    </td>
+                                </tr>
+                            <?php endforeach; ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
+
